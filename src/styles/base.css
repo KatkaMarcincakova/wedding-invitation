@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'BrittanySignature';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/BrittanySignature.ttf');
+}
+
+html,
+body {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    @apply text-dark bg-light;
+    scroll-behavior: smooth;
+}
+
+.title, h1, h2, h3, h4, h5, h6 {
+    font-family: 'BrittanySignature', sans-serif;
+    @apply py-10;
+}
+
+.title {
+    @apply text-3xl xs:text-4xl s:text-5xl m:text-6xl l:text-7xl;
+}
+
+h1 {
+    @apply text-2xl xs:text-3xl s:text-4xl m:text-5xl l:text-6xl;
+}
+
+h2 {
+    @apply text-2xl s:text-3xl m:text-4xl l:text-5xl;
+}
+
+h3 {
+    @apply text-lg xs:text-xl s:text-2xl m:text-3xl l:text-4xl;
+}
+
+h4 {
+    @apply text-base xs:text-lg s:text-xl m:text-2xl l:text-3xl;
+}
+
+h5 {
+    @apply text-sm xs:text-base s:text-lg m:text-xl l:text-2xl;
+}
+
+h6 {
+    @apply text-xs xs:text-sm s:text-base m:text-lg l:text-xl;
+}
+
+@layer utilities {
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #3E5541 transparent;
+    }
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 7px;
+    }
+    *::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 5px;
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: #3E5541;
+        border-radius: 14px;
+        border: 3px solid transparent;
+    }
+}
+
+.content {
+    @apply w-[90%] max-w-[90%] lg:w-[85%] xl:w-[80%] xl:max-w-[80%] mx-auto;
+}
+
+.my-shadow {
+    /* box-shadow: rgba(14, 25, 78, 0.2) 0px 12px 28px 0px, rgba(14, 25, 78, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  box-shadow: rgba(14, 25, 78, 0.15) 0px 15px 25px, rgba(14, 25, 78, 0.05) 0px 5px 10px;*/
+    box-shadow: rgba(14, 25, 78, 0.1) 0px 4px 16px,
+        rgba(14, 25, 78, 0.1) 0px 8px 24px, rgba(14, 25, 78, 0.1) 0px 16px 56px;
+}
+
+button,
+a,
+.smooth-show {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.button-primary {
+    @apply bg-tertiary text-primary px-9 py-3 rounded-full hover:bg-primary hover:text-tertiary hover:font-semibold;
+}
