@@ -15,7 +15,16 @@ import "../styles/base.css";
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 	</head>
-	<body>
+	<body class="max-h-screen overflow-hidden">
 		<slot />
 	</body>
+	<script>
+		document.getElementById('flipButton').addEventListener('click', function() {
+			const flipCard = document.querySelector('.flip-card');
+			flipCard.classList.toggle('flip');
+			this.textContent = flipCard.classList.contains('flip') ? 'Zavrieť obálku' : 'Otvoriť obálku';
+			document.getElementById('flipButton')?.classList.add('hidden');
+		});
+
+	</script>
 </html>

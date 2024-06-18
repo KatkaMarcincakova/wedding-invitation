@@ -90,6 +90,43 @@ a,
     cursor: pointer;
 }
 
-.button-primary {
-    @apply bg-tertiary text-primary px-9 py-3 rounded-full hover:bg-primary hover:text-tertiary hover:font-semibold;
+.btn-primary {
+    @apply bg-tertiary text-primary px-9 py-3 rounded-full hover:bg-primary hover:text-light font-semibold;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 40rem;
+    height: 40rem;
+    perspective: 1000px;
+    transition: transform 0.8s, opacity 0.8s, transform 0.8s; /* Add transition for sliding effect */
+    position: relative;
+    top: 0; /* Initial position */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card.flip .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card.flip {
+    transform: translateY(100%); /* Slide down when flipped */
+    opacity: 0; /* Optional: fade out */
 }
