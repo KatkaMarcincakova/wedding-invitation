@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 
 import paper from '@assetsLocal/paper.jpg';
+import main from '@assetsLocal/main.svg';
+import front from '@assetsLocal/front.svg';
+import back from '@assetsLocal/back.svg';
 ---
 
 <Layout>
@@ -23,7 +26,34 @@ import paper from '@assetsLocal/paper.jpg';
 			Otvoriť obálku
 		</button>
 	</div>
-	<div id="invitations" class="w-full h-screen absolute top-0 left-0 bg-yellow-300 hidden">
-
+	<div id="invitations" class="w-full h-screen absolute top-0 left-0 hidden">
+		<div class="flex flex-col items-center justify-center space-y-8 h-screen w-full">
+			<div class="w-max flex flex-row justify-center space-x-4 items-baseline">
+				<div class="w-96">
+					<img src={main.src} alt="hlavna pozvanka" class="w-full">
+					<br>
+					<p class="w-full text-center">
+						&nbsp;
+					</p>
+				</div>
+				<div class="hover-flip-card w-80">
+					<div class="hover-flip-card-inner">
+						<div class="w-full absolute hover-flip-card-front">
+							<img src={front.src} alt="detaily k pozvanke" class="w-full">
+							<br>
+							<p class="w-full text-center">Hover</p>
+						</div>
+						<div class="w-full absolute hover-flip-card-back">
+							<img src={back.src} alt="detaily k pozvanke" class="w-full">
+							<br>
+							<p class="w-full text-center">&nbsp;</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="https://forms.gle/M5jYPJrawmnW4wzZ8" target="_blank" class="btn-primary w-max mx-auto">
+				Poslať RSVP
+			</a>
+		</div>
 	</div>
 </Layout>

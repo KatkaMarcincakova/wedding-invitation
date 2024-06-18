@@ -1,5 +1,6 @@
 ---
 import "../styles/base.css";
+import bg from '@assetsLocal/bg.svg';
 ---
 
 <!doctype html>
@@ -15,7 +16,7 @@ import "../styles/base.css";
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 	</head>
-	<body class="max-h-screen overflow-hidden">
+	<body class="max-h-screen overflow-hidden w-full bg-cover bg-no-repeat bg-top" style={{backgroundImage: `url('${bg.src}')`,}}>
 		<slot />
 	</body>
 	<script>
