@@ -16,13 +16,15 @@ import bg from '@assetsLocal/bg.svg';
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 	</head>
-	<body class="max-h-screen overflow-hidden w-full bg-cover bg-no-repeat bg-center" style={{backgroundImage: `url('${bg.src}')`,}}>
-		<slot />
+	<body>
+		<div class="max-h-screen overflow-hidden w-full bg-cover bg-no-repeat bg-center" style={{backgroundImage: `url('${bg.src}')`,}}>
+			<slot />
+		</div>
 	</body>
 	<script>
-		document.getElementById('flipButton').addEventListener('click', function() {
+		document.getElementById('flipButton')?.addEventListener('click', function() {
 			const flipCard = document.querySelector('.flip-card');
-			flipCard.classList.toggle('flip');
+			flipCard?.classList.toggle('flip');
 			
 			document.getElementById('flipButton')?.classList.add('hidden');
 			document.getElementById('invitations')?.classList.toggle('hidden');
