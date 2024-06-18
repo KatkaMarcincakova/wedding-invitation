@@ -22,8 +22,10 @@ import "../styles/base.css";
 		document.getElementById('flipButton').addEventListener('click', function() {
 			const flipCard = document.querySelector('.flip-card');
 			flipCard.classList.toggle('flip');
-			this.textContent = flipCard.classList.contains('flip') ? 'Zavrieť obálku' : 'Otvoriť obálku';
+			
 			document.getElementById('flipButton')?.classList.add('hidden');
+			document.getElementById('invitations')?.classList.toggle('hidden');
+			document.getElementById('invitations')?.classList.toggle('invitations-animation');
 		});
 
 	</script>
