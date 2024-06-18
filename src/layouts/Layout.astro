@@ -1,6 +1,7 @@
 ---
 import "../styles/base.css";
 import bg from '@assetsLocal/bg.svg';
+import paper from '@assetsLocal/paper.jpg';
 ---
 
 <!doctype html>
@@ -17,7 +18,17 @@ import bg from '@assetsLocal/bg.svg';
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class="max-h-screen overflow-hidden w-full bg-cover bg-no-repeat bg-center" style={{backgroundImage: `url('${bg.src}')`,}}>
+		<div class="w-full h-screen lg:hidden bg-cover bg-no-repeat bg-center" style={{backgroundImage: `url('${paper.src}')`,}}>
+			<div class="flex items-center h-screen w-full max-w-[90%] mx-auto">
+				<div class="w-max flex flex-col space-y-2 mx-auto">
+					<h1>Oooops ...</h1>
+					<p>
+						Pre správne zobrazenie otvor stránku na počítači.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="max-h-screen overflow-hidden w-full hidden lg:block bg-cover bg-no-repeat bg-center" style={{backgroundImage: `url('${bg.src}')`,}}>
 			<slot />
 		</div>
 	</body>
